@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @news.user %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @news.category %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @news.province %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @news.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @news.body %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @news.date_time %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @news.image %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @news.status %>
+</p>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_index_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  category_id: 
+  province_id: 
+  title: MyString
+  body: MyText
+  date_time: 2015-08-08 19:24:12
+  image: MyString
+  status: false
+
+two:
+  user_id: 
+  category_id: 
+  province_id: 
+  title: MyString
+  body: MyText
+  date_time: 2015-08-08 19:24:12
+  image: MyString
+  status: false
