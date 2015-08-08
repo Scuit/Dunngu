@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dunngu</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Dunngu</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= render 'devise/menu/login_items' %>
-<%= render 'devise/registrations/new' %>
-<%= yield %>
+	<div class="row">
+		<div class="col-md-5">
 
+		</div>
+		<div class="col-md-2">
+			<%= image_tag('dunngu.png') %>
+		</div>	
+		<div class="col-md-5">
+			<%= render 'devise/menu/login_items' %>
+		</div>
+	</div>
+	<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="row">
+				<div class="col-md-8">
+					navnavnavnavnavnavnavnavnav
+				</div>
+				<div class="col-md-4">
+					<%= form_tag(search_path, method: 'get') do %>
+					<%= text_field_tag :search, '', placeholder: 'Sección y/o Provincia o Región', class: 'form-control' %>
+					<% end %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</nav>
+	<%= yield %>
 </body>
 </html>
