@@ -1,30 +1,24 @@
 class NewsController < ApplicationController
   before_action :set_news, only: [:show, :edit, :update, :destroy]
+  before_action :new_news
 
   respond_to :html
 
   def index
-    @new_empty = News.new
-    @all = Province.where(name: "todas")
     @news_all = News.all
     respond_with(@news_all)
   end
 
   def show
-    @new_empty = News.new
-    @all = Province.where(name: "todas")
     respond_with(@news)
   end
 
   def new
-    @new_empty = News.new
     @new = News.new
     respond_with(@new)
   end
 
   def edit
-    @new_empty = News.new
-    @all = Province.where(name: "todas")
   end
 
   def create

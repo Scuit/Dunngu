@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:province_id, :login, :username, :email, :password, :remember_me) }
   	devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:province_id, :username, :email, :password, :password_confirmation, :current_password) }
   end
+
+  def new_news  	
+  	@new_empty = News.new
+  	@all = Province.where(name: "todas")
+  end
 end

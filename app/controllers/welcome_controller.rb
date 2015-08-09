@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+	before_action :new_news
+	
 	def index
 		@national = News.national_last
 		@all = Province.where(name: "todas")
