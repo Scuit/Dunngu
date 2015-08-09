@@ -28,8 +28,8 @@ class NewsController < ApplicationController
   end
 
   def update
-    @news.update(news_params)
-    respond_with(@news)
+    @new.update(news_params)
+    respond_with(@new)
   end
 
   def destroy

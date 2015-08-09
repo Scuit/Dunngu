@@ -1,2 +1,9 @@
-$('#news_province_id').empty();
-$('#news_province_id').append("<%= j render 'province', provinces: @provinces %>");
+if ('<%= @normal %>' == '1') {
+	$('.normal #news_province_id').empty();
+	$('.normal #news_province_id').append("<%= j render 'province', provinces: @provinces %>");
+}
+else
+{
+	$('#news_province_id').empty();
+	$('#news_province_id').append("<%= j render 'province', provinces: @provinces %>");
+}

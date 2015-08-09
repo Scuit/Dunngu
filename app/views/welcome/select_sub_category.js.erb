@@ -1,2 +1,9 @@
-$('#news_sub_category_id').empty();
-$('#news_sub_category_id').append("<%= j render 'sub_category', sub_categories: @sub_categories %>");
+if ('<%= @normal %>' == '1') {
+	$('.normal #news_sub_category_id').empty();
+	$('.normal #news_sub_category_id').append("<%= j render 'sub_category', sub_categories: @sub_categories %>");
+}
+else
+{
+	$('#news_sub_category_id').empty();
+	$('#news_sub_category_id').append("<%= j render 'sub_category', sub_categories: @sub_categories %>");
+}

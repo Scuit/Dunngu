@@ -2,41 +2,54 @@
 
 <p>
   <strong>User:</strong>
-  <%= @new.user %>
+  <%= @new.user.username %>
 </p>
 
 <p>
-  <strong>Subcategory:</strong>
-  <%= @new.sub_category %>
+  <strong>Categoría:</strong>
+  <%= @new.sub_category.category.name unless @new.sub_category.nil? %>
 </p>
 
+<p>
+  <strong>Subcategoría:</strong>
+  <%= @new.sub_category.name unless @new.sub_category.nil? %>
+</p>
+
+<p>
+  <strong>Región:</strong>
+  <%= @new.province.region.name unless @new.province.national? %>
+  <%= 'Noticia nacional' if @new.province.national? %>
+</p>
+
+<% unless @new.province.national? %>
 <p>
   <strong>Province:</strong>
-  <%= @new.province %>
+  <%= @new.province.name %>
 </p>
+<% end %>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Encabezado:</strong>
   <%= @new.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Cuerpo:</strong>
   <%= @new.body %>
 </p>
 
 <p>
-  <strong>Date time:</strong>
+  <strong>Fecha:</strong>
   <%= @new.date_time %>
 </p>
 
 <p>
   <strong>Image:</strong>
-  <%= @new.image %>
+  <%= image_tag @new.image.url, size: '50x50 ' %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Estado:</strong>
   <%= @new.status %>
 </p>
 

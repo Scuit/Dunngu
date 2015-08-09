@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 	before_action :new_news
-	
+
 	def index
 		@national = News.national_last
 		@all = Province.where(name: "todas")
@@ -16,6 +16,7 @@ class WelcomeController < ApplicationController
 
 	def select_sub_category
 		@sub_categories = Category.find(params[:category_id]).sub_categories.order(:name)
+		@normal = params[:normal]
 		respond_to do |format|
 			format.js
 		end
@@ -23,6 +24,7 @@ class WelcomeController < ApplicationController
 
 	def select_province
 		@provinces = Region.find(params[:region_id]).provinces.order(:name)
+		@normal = params[:normal]
 		respond_to do |format|
 			format.js
 		end
