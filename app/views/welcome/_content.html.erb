@@ -3,10 +3,12 @@
 		Noticia de pago
 	</div>
 	<!-- últimas provinciales -->
+	<% if user_signed_in? %>
 	<% @provincial.each do |pl| %>
 	<div class="normal_notice">
 		<%= pl.title.to_s %>
 	</div>
+	<% end %>
 	<% end %>
 	<!-- últimas nacionales -->
 	<% @national.each do |nl| %>
@@ -19,12 +21,15 @@
 	<div class="pay_notice">		
 		Noticia de pago
 	</div>
+	
 	<!-- últimas regionales -->
 	
+	<% if user_signed_in? %>
 	<% @regional.each do |rl| %>
 	<div class="normal_notice">
 		<%= rl.title.to_s %>
 	</div>	
+	<% end %>
 	<% end %>
 	<!-- últimas nacionales -->	
 	<% @national.each do |nl| %>
