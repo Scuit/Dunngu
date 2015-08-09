@@ -8,7 +8,9 @@
 	<% @provincial.each do |pl| %>
 	<div class="normal_notice">
 		<%= pl.title.to_s %>
+		<%= link_to pl do %>
 		<%= image_tag pl.image.url, size: '50x50' %>
+		<% end %>
 	</div>
 	<% end %>
 	<% end %>
@@ -35,7 +37,9 @@
 	<h1>Noticias de mi región</h1>
 	<div class="normal_notice">
 		<%= rl.title.to_s %>
+		<%= link_to rl do %>
 		<%= image_tag rl.image.url, size: '50x50' %>
+		<% end %>
 	</div>	
 	<% end %>
 	<% end %>
@@ -44,7 +48,9 @@
 	<h1>Noticias de mi nación</h1>
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
+		<%= link_to nl do %>
 		<%= image_tag nl.image.url, size: '50x50' %>
+		<% end %>
 	</div>	
 	<% end %>
 </div>

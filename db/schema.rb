@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809160415) do
+ActiveRecord::Schema.define(version: 20150809212554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150809160415) do
     t.integer  "province_id"
     t.string   "title"
     t.text     "body"
-    t.datetime "date_time"
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150809160415) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.date     "date"
   end
 
   add_index "news", ["province_id"], name: "index_news_on_province_id", using: :btree
