@@ -1,53 +1,55 @@
 <%= form_for(@news) do |f| %>
-  <% if @news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
+<% if @news.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
 
-      <ul>
-      <% @news.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <ul>
+    <% @news.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="modal-body">
   <div class="field">
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
     <%= label_tag :category_id, 'Categoría' %><br>
-    <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: 'Seleccione categoría' %>
+    <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: 'Seleccione categoría', class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :sub_category_id, 'Subcategoría' %><br>
-    <%= f.select :sub_category_id, options_for_select([['No ha sido seleccionado ninguna categoría', 0]]) %>
+    <%= f.select :sub_category_id, options_for_select([['No ha sido seleccionado ninguna categoría', 0]]), {}, {class: 'form-control' }%>
   </div>
   <div class="field">
     <%= label_tag :region_id, 'Región' %><br>
-    <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name), prompt: 'Seleccione región' %>
+    <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name), prompt: 'Seleccione región', class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :province_id, 'Provincia' %><br>
-    <%= f.select :province_id, options_for_select([['No ha sido seleccionado ninguna región', 0]]) %>
+    <%= f.select :province_id, options_for_select([['No ha sido seleccionado ninguna región', 0]]), {}, {class: 'form-control'} %>
   </div>
   <div class="field">
     <%= f.label :title, 'Título' %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :body, 'Cuerpo' %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :date_time, 'Fecha y hora' %><br>
-    <%= f.datetime_select :date_time %>
+    <%= f.datetime_select :date_time, { start_year: 1995}, {class: 'form-control'} %>
   </div>
   <div class="field">
     <%= f.label :image, 'Imagen' %><br>
-    <%= f.text_field :image, placeholder: 'Falta habilitar paperclip' %>
+    <%= f.text_field :image, placeholder: 'Falta habilitar paperclip', class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+
+<div class="modal-footer">
+  <%= f.submit 'Ingresar', class: 'btn btn-primary' %>
+</div>
 <% end %>
