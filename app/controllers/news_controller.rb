@@ -19,7 +19,7 @@ class NewsController < ApplicationController
   end
 
   def edit
-    @provinces = Province.where(region_id: @new.province.region.id) unless @new.province.national?
+    @provinces = Province.where("region_id = "+ @new.province.region.id.to_s + " or name = 'todas'") unless @new.province.national?
     @provinces = Province.where(name: "todas") if @new.province.national?
     @region = @new.province.region
     @sub_categories = SubCategory.where(category_id: @new.sub_category.category.id)

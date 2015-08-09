@@ -52,6 +52,7 @@
   <strong>Estado:</strong>
   <%= @new.status %>
 </p>
-
-<%= link_to 'Edit', edit_news_path(@new) %> |
-<%= link_to 'Back', news_index_path %>
+<% if user_signed_in? %>
+<%= link_to 'Editar', edit_news_path(@new) if can? :edit, News or @new.user == current_user %> |
+<% end %>
+<%= link_to 'Lista de Noticias', news_index_path %>

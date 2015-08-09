@@ -31,7 +31,7 @@
     </div>
     <div class="field">
       <%= f.label :province_id, 'Provincia' %><br>
-      <%= f.select :province_id, options_from_collection_for_select(@provinces, :id, :name), {prompt: 'No ha seleccionado una región'}, {class: 'form-control'} %>
+      <%= f.select :province_id, options_from_collection_for_select(@provinces, :id, :name, @new.province.id), {prompt: 'No ha seleccionado una región'}, {class: 'form-control'} %>
     </div>
     <div class="field">
       <%= f.label :title, 'Título' %><br>

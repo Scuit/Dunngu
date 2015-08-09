@@ -17,19 +17,21 @@
 
   <tbody>
     <% @news_all.each do |news| %>
-      <tr>
-        <td><%= news.user.username %></td>
-        <td><%= news.sub_category.name %></td>
-        <td><%= news.province.name %></td>
-        <td><%= news.title %></td>
-        <td><%= news.body_reduced %></td>
-        <td><%= news.date %></td>
-        <td><%= image_tag(news.image.url, size: '50x50') %></td>
-        <td><%= news.status %></td>
-        <td><%= link_to 'Show', news %></td>
-        <td><%= link_to 'Edit', edit_news_path(news) if can? :edit, News %></td>
-        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, News %></td>
-      </tr>
+    <tr>
+      <td><%= news.user.username %></td>
+      <td><%= news.sub_category.name %></td>
+      <td><%= news.province.name %></td>
+      <td><%= news.title %></td>
+      <td><%= news.body_reduced %></td>
+      <td><%= news.date %></td>
+      <td><%= image_tag(news.image.url, size: '50x50') %></td>
+      <td><%= news.status %></td>
+      <td><%= link_to 'Mostrar', news %></td>
+      <% if user_signed_in? %>
+      <td><%= link_to 'Editar', edit_news_path(news) if can? :edit, News %></td>
+      <td><%= link_to 'Borrar', news, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, News %></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
