@@ -12,6 +12,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  def is?( requested_role )
+  	case requested_role
+  	when :admin
+  		type = 'A'
+  	when :moderator
+  		type = 'M'
+  	when :general
+  		type = 'G'
+  	end
+  	self.user_type == UserType.find_by_code(type)
+  end
+
   def provincial_last
   	News.joins(user: :province).where("provinces.id = '#{self.province.id}'")
   end
