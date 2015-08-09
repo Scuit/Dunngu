@@ -1,5 +1,13 @@
 <div class="col-md-3">
-	NOTICIA
+	<!-- últimas nacionales -->
+	<div class="pay_notice">		
+		Noticia de pago
+	</div>
+	<% @national_last.each do |nl| %>
+	<div class="normal_notice">
+		<%= nl.title.to_s %>
+	</div>	
+	<% end %>
 </div>	
 <div class="col-md-3">
 	NOTICIA
