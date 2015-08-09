@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :province_id, 'Provincia' %><br>
-    <%= f.select :province_id, options_for_select([['No ha sido seleccionado ninguna región', 0]]), {}, {class: 'form-control'} %>
+    <%= f.select :province_id, options_from_collection_for_select(@all, :id, :name), {prompt: 'No ha seleccionado una región'}, {class: 'form-control'} %>
   </div>
   <div class="field">
     <%= f.label :title, 'Título' %><br>
@@ -40,12 +40,8 @@
     <%= f.text_area :body, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :date_time, 'Fecha y hora' %><br>
-    <%= f.datetime_select :date_time, { start_year: 1995}, {class: 'form-control'} %>
-  </div>
-  <div class="field">
     <%= f.label :image, 'Imagen' %><br>
-    <%= f.text_field :image, placeholder: 'Falta habilitar paperclip', class: 'form-control' %>
+    <%= f.file_field :image, placeholder: 'Falta habilitar paperclip', class: 'form-control' %>
   </div>
 </div>
 

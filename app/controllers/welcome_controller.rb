@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
 	def index
 		@national = News.national_last
+		@all = Province.where(name: "todas")
 		@news = News.new
 		if user_signed_in?
 			@provincial = current_user.provincial_last

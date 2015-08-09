@@ -8,6 +8,7 @@
 	<% @provincial.each do |pl| %>
 	<div class="normal_notice">
 		<%= pl.title.to_s %>
+		<%= image_tag pl.image.url, size: '50x50' %>
 	</div>
 	<% end %>
 	<% end %>
@@ -16,6 +17,7 @@
 	Noticias de mi nación
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
+		<%= image_tag nl.image.url, size: '50x50' %>
 	</div>	
 	<% end %>
 </div>	
@@ -31,14 +33,16 @@
 	Noticias de mi región
 	<div class="normal_notice">
 		<%= rl.title.to_s %>
+		<%= image_tag rl.image.url, size: '50x50' %>
 	</div>	
 	<% end %>
 	<% end %>
 	<!-- últimas nacionales -->	
 	<% @national.each do |nl| %>
-	Noticias de mi región
+	Noticias de mi nación
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
+		<%= image_tag nl.image.url, size: '50x50' %>
 	</div>	
 	<% end %>
 </div>

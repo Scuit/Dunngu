@@ -11,6 +11,8 @@ gem 'devise'
 gem 'pg'
 
 gem 'cancancan'
+
+gem "paperclip", "~> 4.3"
 # Use SCSS for stylesheets
 
 gem 'bootstrap-sass', '~> 3.3.5'
