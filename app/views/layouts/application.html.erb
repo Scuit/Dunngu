@@ -13,35 +13,12 @@
 
 		</div>
 		<div class="col-md-2">
+			<%= link_to root_path do %>
 			<%= image_tag('dunngu.png') %>
+			<% end %>
 		</div>	
 		<div class="col-md-5">
-			<h2>Log in</h2>
-			<% resource = User.new %>
-			<% resource_name = :user %>
-			<% devise_mapping = Devise.mappings[:user] %>
-			<%= form_for(resource, url: session_path(resource_name)) do |f| %>
-			<div class="field">
-				<%= f.label :email, 'Email' %><br />
-				<%= f.email_field :email, autofocus: true %>
-			</div>
-
-			<div class="field">
-				<%= f.label :password, 'Contraseña' %><br />
-				<%= f.password_field :password, autocomplete: "off" %>
-			</div>
-			<div class="field">
-				<%= f.check_box :remember_me %>
-				<%= f.label :remember_me, 'Recordarme' %>
-			</div>
-
-			<div class="actions">
-				<%= f.submit "Ir" %>
-			</div>
-			<% end %>
-
-			<%= link_to 'crear cuenta', new_registration_path(:user) %>
-
+			<%= render 'devise/menu/login_items' %>
 		</div>
 	</div>
 	<nav class="navbar navbar-default" role="navigation">

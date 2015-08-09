@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   def provincial_last
-  	
+  	News.joins(user: :province)
   end
 end
