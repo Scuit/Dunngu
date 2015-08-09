@@ -4,23 +4,26 @@ class NewsController < ApplicationController
   respond_to :html
 
   def index
-    @new = News.new
+    @new_empty = News.new
     @all = Province.where(name: "todas")
     @news_all = News.all
     respond_with(@news_all)
   end
 
   def show
+    @new_empty = News.new
     @all = Province.where(name: "todas")
     respond_with(@news)
   end
 
   def new
+    @new_empty = News.new
     @new = News.new
-    respond_with(@news)
+    respond_with(@new)
   end
 
   def edit
+    @new_empty = News.new
     @all = Province.where(name: "todas")
   end
 
@@ -42,7 +45,7 @@ class NewsController < ApplicationController
 
   private
   def set_news
-    @news = News.find(params[:id])
+    @new = News.find(params[:id])
   end
 
   def news_params
