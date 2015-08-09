@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
   	News.joins(user: :province).where("provinces.id = '#{self.province.id}'")
   end
 
+  def regional_last
+  	News.joins(user: { province: :region }).where("regions.id = '#{self.province.region.id}'")
+  end
+
   def set_columns
   	self.status = true
   end

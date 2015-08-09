@@ -2,8 +2,14 @@
 	<div class="pay_notice">		
 		Noticia de pago
 	</div>
+	<!-- últimas provinciales -->
+	<% @provincial.each do |pl| %>
+	<div class="normal_notice">
+		<%= pl.title.to_s %>
+	</div>
+	<% end %>
 	<!-- últimas nacionales -->
-	<% @national_last.each do |nl| %>
+	<% @national.each do |nl| %>
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
 	</div>	
@@ -13,10 +19,17 @@
 	<div class="pay_notice">		
 		Noticia de pago
 	</div>
-	<!-- últimas provinciales -->
-	<% @provincial_last.each do |pl| %>
+	<!-- últimas regionales -->
+	
+	<% @regional.each do |rl| %>
 	<div class="normal_notice">
-		<%= pl.title.to_s %>
+		<%= rl.title.to_s %>
+	</div>	
+	<% end %>
+	<!-- últimas nacionales -->	
+	<% @national.each do |nl| %>
+	<div class="normal_notice">
+		<%= nl.title.to_s %>
 	</div>	
 	<% end %>
 </div>

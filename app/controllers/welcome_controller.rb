@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
   def index
-  	@national_last = News.national_last
-  	@provincial_last = current_user.provincial_last
+  	@national = News.national_last
+  	@provincial = current_user.provincial_last
+  	@regional = current_user.regional_last
   	unless params[:search].nil?
   		#Buscar parámetros
   	end
