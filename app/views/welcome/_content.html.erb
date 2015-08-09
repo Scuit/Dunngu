@@ -1,8 +1,8 @@
 <div class="col-md-3">
-	<!-- últimas nacionales -->
 	<div class="pay_notice">		
 		Noticia de pago
 	</div>
+	<!-- últimas nacionales -->
 	<% @national_last.each do |nl| %>
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
@@ -10,5 +10,13 @@
 	<% end %>
 </div>	
 <div class="col-md-3">
-	NOTICIA
+	<div class="pay_notice">		
+		Noticia de pago
+	</div>
+	<!-- últimas provinciales -->
+	<% @provincial_last.each do |pl| %>
+	<div class="normal_notice">
+		<%= pl.title.to_s %>
+	</div>	
+	<% end %>
 </div>

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   def provincial_last
-  	News.joins(user: :province)
+  	News.joins(user: :province).where("provinces.id = '#{self.province.id}'")
   end
 
   def set_columns
