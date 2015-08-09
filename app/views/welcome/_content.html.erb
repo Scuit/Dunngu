@@ -17,7 +17,9 @@
 	Noticias de mi nación
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
+		<%= link_to nl do %>
 		<%= image_tag nl.image.url, size: '50x50' %>
+		<% end %>
 	</div>	
 	<% end %>
 </div>	

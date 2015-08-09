@@ -1,30 +1,30 @@
-<h1>Listing news</h1>
+<h1>Lista de noticias</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Category</th>
-      <th>Province</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Date time</th>
-      <th>Image</th>
-      <th>Status</th>
+      <th>Usuario</th>
+      <th>Subcategoría</th>
+      <th>Provincia</th>
+      <th>Encabezado</th>
+      <th>Cuerpo</th>
+      <th>Fecha</th>
+      <th>Imagen</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @news.each do |news| %>
+    <% @news_all.each do |news| %>
       <tr>
-        <td><%= news.user %></td>
-        <td><%= news.category %></td>
-        <td><%= news.province %></td>
+        <td><%= news.user.username %></td>
+        <td><%= news.sub_category.name %></td>
+        <td><%= news.province.name %></td>
         <td><%= news.title %></td>
         <td><%= news.body %></td>
         <td><%= news.date_time %></td>
-        <td><%= news.image %></td>
+        <td><%= image_tag(news.image.url, size: '50x50') %></td>
         <td><%= news.status %></td>
         <td><%= link_to 'Show', news %></td>
         <td><%= link_to 'Edit', edit_news_path(news) %></td>

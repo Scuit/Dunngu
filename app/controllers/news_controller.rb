@@ -4,20 +4,24 @@ class NewsController < ApplicationController
   respond_to :html
 
   def index
-    @news = News.all
-    respond_with(@news)
+    @new = News.new
+    @all = Province.where(name: "todas")
+    @news_all = News.all
+    respond_with(@news_all)
   end
 
   def show
+    @all = Province.where(name: "todas")
     respond_with(@news)
   end
 
   def new
-    @news = News.new
+    @new = News.new
     respond_with(@news)
   end
 
   def edit
+    @all = Province.where(name: "todas")
   end
 
   def create
@@ -37,11 +41,11 @@ class NewsController < ApplicationController
   end
 
   private
-    def set_news
-      @news = News.find(params[:id])
-    end
+  def set_news
+    @news = News.find(params[:id])
+  end
 
-    def news_params
-      params.require(:news).permit(:user_id, :sub_category_id, :province_id, :title, :body, :date_time, :image, :status)
-    end
+  def news_params
+    params.require(:news).permit(:user_id, :sub_category_id, :province_id, :title, :body, :date_time, :image, :status)
+  end
 end
