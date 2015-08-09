@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'devise'
 
 gem 'pg'
+
+gem 'cancancan'
 # Use SCSS for stylesheets
 
 gem 'bootstrap-sass', '~> 3.3.5'
