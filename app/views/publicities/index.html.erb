@@ -1,0 +1,27 @@
+<h1>Listing publicities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @publicities.each do |publicity| %>
+      <tr>
+        <td><%= publicity.title %></td>
+        <td><%= publicity.body %></td>
+        <td><%= link_to 'Show', publicity %></td>
+        <td><%= link_to 'Edit', edit_publicity_path(publicity) %></td>
+        <td><%= link_to 'Destroy', publicity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Publicity', new_publicity_path %>

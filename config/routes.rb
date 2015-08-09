@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :publicities
+
   resources :sub_categories
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

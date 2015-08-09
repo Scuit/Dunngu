@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @publicity.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @publicity.body %>
+</p>
+
+<%= link_to 'Edit', edit_publicity_path(@publicity) %> |
+<%= link_to 'Back', publicities_path %>
