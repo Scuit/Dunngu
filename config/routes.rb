@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   get '/buscar/' => 'welcome#index', as: :search
+  post '/seleccionar_subcategoria' => 'welcome#select_sub_category', as: :select_sub_category
+  post '/seleccionar_provincia' => 'welcome#select_province', as: :select_province
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

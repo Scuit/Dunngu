@@ -12,4 +12,26 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+	if ($('#category_id')) {
+		$('body').on('change', '#category_id', function(event) {
+			var selected_resource_id = $(this).val();
+			$.ajax({url:'/seleccionar_subcategoria',
+				type: 'POST',
+				data: { category_id : selected_resource_id }
+			});
+		});
+	};
+	if ($('#region_id')) {
+		$('body').on('change', '#region_id', function(event) {
+			var selected_resource_id = $(this).val();
+			$.ajax({url:'/seleccionar_provincia',
+				type: 'POST',
+				data: { region_id : selected_resource_id }
+			});
+		});
+	};
+});
