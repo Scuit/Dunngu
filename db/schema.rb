@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809030800) do
+ActiveRecord::Schema.define(version: 20150809030936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150809030800) do
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_free"
   end
 
   add_index "news", ["category_id"], name: "index_news_on_category_id", using: :btree
