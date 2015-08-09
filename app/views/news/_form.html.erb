@@ -18,19 +18,20 @@
 
     <div class="field">
       <%= label_tag :category_id, 'Categoría' %><br>
-      <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: 'Seleccione categoría', class: 'form-control' %>
+      <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, @category.id), prompt: 'Seleccione categoría', class: 'form-control' %>
     </div>
     <div class="field">
       <%= f.label :sub_category_id, 'Subcategoría' %><br>
-      <%= f.select :sub_category_id, options_for_select([['No ha sido seleccionado ninguna categoría', 0]]), {}, {class: 'form-control' }%>
+      <%= f.select :sub_category_id, options_from_collection_for_select(@sub_categories, :id, :name, @new.sub_category.id), {}, {class: 'form-control' }%>
     </div>
     <div class="field">
       <%= label_tag :region_id, 'Región' %><br>
-      <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name), prompt: 'Seleccione región', class: 'form-control' %>
+      <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name, @region.id), prompt: 'Seleccione región', class: 'form-control' unless @region.nil? %>
+      <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name), prompt: 'Seleccione región', class: 'form-control' if @region.nil?  %>
     </div>
     <div class="field">
       <%= f.label :province_id, 'Provincia' %><br>
-      <%= f.select :province_id, options_from_collection_for_select(@all, :id, :name), {prompt: 'No ha seleccionado una región'}, {class: 'form-control'} %>
+      <%= f.select :province_id, options_from_collection_for_select(@provinces, :id, :name), {prompt: 'No ha seleccionado una región'}, {class: 'form-control'} %>
     </div>
     <div class="field">
       <%= f.label :title, 'Título' %><br>

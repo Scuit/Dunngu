@@ -4,7 +4,7 @@
 	</div>
 	<!-- últimas provinciales -->
 	<% if user_signed_in? %>
-	Noticias de mi provincia
+	<h1>Noticias de mi provincia</h1>
 	<% @provincial.each do |pl| %>
 	<div class="normal_notice">
 		<%= pl.title.to_s %>
@@ -14,7 +14,7 @@
 	<% end %>
 	<!-- últimas nacionales -->
 	<% @national.each do |nl| %>
-	Noticias de mi nación
+	<h1>Noticias de mi nación</h1>
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
 		<%= link_to nl do %>
@@ -32,7 +32,7 @@
 	
 	<% if user_signed_in? %>
 	<% @regional.each do |rl| %>
-	Noticias de mi región
+	<h1>Noticias de mi región</h1>
 	<div class="normal_notice">
 		<%= rl.title.to_s %>
 		<%= image_tag rl.image.url, size: '50x50' %>
@@ -41,7 +41,7 @@
 	<% end %>
 	<!-- últimas nacionales -->	
 	<% @national.each do |nl| %>
-	Noticias de mi nación
+	<h1>Noticias de mi nación</h1>
 	<div class="normal_notice">
 		<%= nl.title.to_s %>
 		<%= image_tag nl.image.url, size: '50x50' %>
