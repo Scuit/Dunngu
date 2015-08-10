@@ -1,5 +1,6 @@
 class PublicitiesController < ApplicationController
   before_action :set_publicity, only: [:show, :edit, :update, :destroy]
+  before_action :new_news
 
   respond_to :html
 

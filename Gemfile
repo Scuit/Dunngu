@@ -10,6 +10,8 @@ gem 'devise'
 
 gem 'pg'
 
+gem 'htmlcompressor'
+
 gem 'cancancan'
 
 gem "paperclip", "~> 4.3"

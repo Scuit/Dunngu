@@ -36,7 +36,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
-    cancancan (1.10.1)
+    cancancan (1.12.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -48,7 +48,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    devise (3.4.1)
+    devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -62,6 +62,7 @@ GEM
     haml (4.0.6)
       tilt
     hike (1.2.3)
+    htmlcompressor (0.2.0)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -174,6 +175,7 @@ DEPENDENCIES
   cancancan
   coffee-rails (~> 4.0.0)
   devise
+  htmlcompressor
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
