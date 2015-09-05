@@ -34,6 +34,6 @@ class User < ActiveRecord::Base
 
   def set_columns
   	self.status = true
-  	self.user_type ||= UserType.where(code: 'G')
+  	self.user_type ||= UserType.find_by_code('G')
   end
 end

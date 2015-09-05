@@ -3,16 +3,20 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use mysql as the database for Active Record
-gem 'mysql2'
 
 gem 'devise'
 
 gem 'pg'
 
+
+
+gem 'meta_request'
+
 gem 'htmlcompressor'
 
 gem 'cancancan'
+
+gem 'yui-compressor'
 
 gem "paperclip", "~> 4.3"
 # Use SCSS for stylesheets
@@ -20,9 +24,10 @@ gem "paperclip", "~> 4.3"
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'rails_admin'
+
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
