@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   respond_to :html
 
   def index
-    aa
+    aaqweqwe
     @categories = Category.all
     respond_with(@categories)
   end
